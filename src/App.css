@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* background-color: #efc2ef; */
+    background: linear-gradient(135deg,#efc2ef, #caa5f2, #a0c4ff);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111111;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    min-height: 100vh;
+    width: 100%;
+    padding: 10px; 
+    box-sizing: border-box;
+}
+
+.backgroundVideo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: saturate(2.5);
+}
+
+.blackScreen {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    pointer-events: none;
+    background-color: rgba(103, 71, 71, 0.3);
+    z-index: 1;
+}
+
+.music-Container {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 36px;
+    box-shadow: 0 0 20px rgba(26, 26, 26, 0.1),
+                0 0 40px rgba(26, 26, 26, 0.1),
+                0 0 80px rgba(26, 26, 26, 0.1);
+    backdrop-filter: blur(15px);
+    font-weight: 600;
+    background-color: rgb(67, 1, 79);
+    margin: 0 auto; 
+}
+
+.music-Head-Name {
+    margin: 0 auto;
+    font-size: 1.5rem;
+    text-align: center;
+    color:gold;
+}
+
+.music-Artist-Name {
+    color: rgb(204, 200, 200);
+    margin: 4px 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+#songAvatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 18px 0;
+    position: relative;
+    cursor: pointer;
+    animation: animateAvatar .5s linear infinite;
+}
+
+@keyframes animateAvatar {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+.musicTimerDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 600;
+    color: white; 
+}
+
+.musicProgressBar {
+    width: 100%;
+    margin-bottom: 16px;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    filter: hue-rotate(20deg);
+    background-color: linear-gradient(90deg, #00c6ff, #0072ff)
+}
+
+.playBtn {
+    font-size: 32px;
+    margin: 8px 10px;
+    color:#bcced8f0;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.musicControler {
+    cursor: pointer;
+    font-size: 28px;
+    color: #a82594;
+}
+.playBtn:hover, .musicControler:hover {
+    transform: scale(1.1);
+}
+
+.changeBackBtn {
+    width: 200px;
+    height: 15px;
+    background-color: #0c0c0c;
+    position: absolute;
+    border-radius: 12px 12px 0 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    transition: .3s;
+    color: #eee;
+    cursor: pointer;
+    padding: 3px 0 0 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+.changeBackBtn:hover {
+    height: 30px;
+    color: #222222;
+}
+
+.objectFitCover {
+    object-fit: cover;
+}
+
+.objectFitContain {
+    object-fit: contain;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack container vertically on small screens */
+        padding: 10px; /* Remove excess padding */
+    }
+
+    .music-Container {
+        width: 90%;  /* Make container more flexible */
+        padding: 20px;
+        border-radius: 20px;
+        max-width: none;  /* Remove max-width */
+    }
+
+    #songAvatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .music-Head-Name {
+        font-size: 1.2rem;
+    }
+
+    .music-Artist-Name {
+        font-size: 1rem;
+    }
+
+    .playBtn {
+        font-size: 28px;
+    }
+
+    .musicControler {
+        font-size: 24px;
+    }
+
+    .changeBackBtn {
+        width: 180px;
+        height: 25px;
+        font-size: 14px;
+    }
+
+    .musicProgressBar {
+        height: 8px;
+    }
+}
+
+/* For tablets */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .music-Container {
+        width: 80%;
+        padding: 25px;
+        border-radius: 30px;
+    }
+
+    #songAvatar {
+        width: 180px;
+        height: 180px;
+    }
+
+    .music-Head-Name {
+        font-size: 1.4rem;
+    }
+
+    .music-Artist-Name {
+        font-size: 1.1rem;
+    }
+
+    .playBtn {
+        font-size: 30px;
+    }
+
+    .musicControler {
+        font-size: 26px;
+    }
+
+    .changeBackBtn {
+        width: 190px;
+        height: 20px;
+        font-size: 16px;
+    }
+
+    .musicProgressBar {
+        height: 9px;
+    }
+}
+
+/* For larger screens (desktop) */
+@media (min-width: 1280px) {
+    .music-Container {
+        width: 350px;  /* Keep container a reasonable size */
+        padding: 35px;
+        border-radius: 36px;
+    }
+
+    .music-Head-Name {
+        font-size: 1.6rem;
+    }
+
+    .music-Artist-Name {
+        font-size: 1.3rem;
+    }
+
+    .playBtn {
+        font-size: 36px;
+    }
+
+    .musicControler {
+        font-size: 30px;
+    }
+
+    .changeBackBtn {
+        width: 220px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    .musicProgressBar {
+        height: 12px;
+    }
+}
